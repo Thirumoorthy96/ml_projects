@@ -3,8 +3,8 @@ import sys
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
-from src.logger import logging
-from src.exception import CustomException
+import logging
+import CustomException
 
 @dataclass
 class DataIngestionConfig:
@@ -40,6 +40,7 @@ class DataIngestion():
                     self.ingestion_config.test_data_path)
         
         except Exception as e:
+            
             raise CustomException(e,sys)
         
 
