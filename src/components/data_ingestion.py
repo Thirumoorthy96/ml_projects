@@ -4,7 +4,10 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 import logging
-import CustomException
+#from src.exception import CustomException
+
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 
 @dataclass
 class DataIngestionConfig:
@@ -40,10 +43,13 @@ class DataIngestion():
                     self.ingestion_config.test_data_path)
         
         except Exception as e:
-            
-            raise CustomException(e,sys)
+            print("error")
+            #raise CustomException(e,sys)
         
 
 if __name__ == "__main__":
     obj=DataIngestion()
-    obj.intiate_data_ingestion()
+    train_data,test_data =  obj.intiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    data_transformation.initiate_datatransformation(train_data,test_data)

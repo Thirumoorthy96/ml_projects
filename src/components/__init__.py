@@ -1,2 +1,4 @@
-from logger import logging
-from exception import CustomException
+from src.logger import logging
+from src.exception import CustomException
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
