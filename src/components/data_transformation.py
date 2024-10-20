@@ -12,8 +12,7 @@ from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
 #from src.exception import CustomException
 import logging
-from src.utilis import save_object
-
+#from src.utilis import save_object
 
 @dataclass
 class DataTransformationConfig:

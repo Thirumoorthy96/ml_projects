@@ -6,8 +6,8 @@ from dataclasses import dataclass
 import logging
 #from src.exception import CustomException
 
-from src.components.data_transformation import DataTransformation
-from src.components.data_transformation import DataTransformationConfig
+from data_transformation import DataTransformation
+from data_transformation import DataTransformationConfig
 
 @dataclass
 class DataIngestionConfig:
