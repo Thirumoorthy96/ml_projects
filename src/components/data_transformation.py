@@ -64,7 +64,14 @@ class DataTransformation:
         try:
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
-
+            train_df.rename(columns={'gender':'gender','race/ethnicity':'race_ethnicity',
+                                     'parental level of education':'parental_level_of_education',
+                                     'lunch':'lunch','test preparation course':'test_preparation_course',
+                                     'reading score':'reading_score','writing score':'writing_score'}, inplace=True)
+            test_df.rename(columns={'gender':'gender','race/ethnicity':'race/ethnicity',
+                                     'parental level of education':'parental_level_of_education',
+                                     'lunch':'lunch','test preparation course':'test_preparation_course',
+                                     'reading score':'reading_score','writing score':'writing_score'}, inplace=True)
             logging.info("Read train and test data completed")
 
             logging.info("Obtaining preprocessing object")
@@ -109,4 +116,5 @@ class DataTransformation:
             )
         except Exception as e:
             raise CustomException(e,sys)
+
 
